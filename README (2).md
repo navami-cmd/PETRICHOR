@@ -8,6 +8,11 @@ A cozy rainy room in your browser. Rain streaks down a foggy window over a night
 - **Journal**: write a thought and watch it appear on the glass, then evaporate.
 - **Storm mode**: lightning, thunder, and a startled cat.
 
+- **Weather modes**: rain, storm (lightning bolts + thunder), clear (sun, stars, birds), cold (frost, snow, wind).
+- **Tame the cat**: stroke it slowly; it warms up and gets a collar.
+- **Sill and desk**: tilted phone with the real time, water the plant until it blooms, brew coffee, light the candle.
+- **Radio**: search any song and play a 30-second preview, kept low under the rain (iTunes Search API, no key needed).
+
 ## Run
 
 Open `index.html` in a browser (or use the VS Code Live Server extension).
