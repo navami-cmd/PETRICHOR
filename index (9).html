@@ -97,6 +97,45 @@ body.lamp .glow{opacity:1}
 #rp .tr{display:flex;gap:10px;align-items:center;width:100%;text-align:left;margin-top:6px;background:#fff1;color:inherit}
 .tr img{width:40px;height:40px;border-radius:3px}.tr small{display:block;opacity:.6}
 #rp label{display:flex;gap:8px;margin:10px 0;font:italic 18px 'Cormorant Garamond',serif}
+.sp{display:none}body.spring .sp{display:block}
+body.spring .cat,body.spring .candle,body.spring .wx,body.spring .hud label:first-of-type,body.spring .rn{display:none}
+.sp2{display:none}body.spring .sp2{display:inline}
+body.spring .win{border-color:#f3ead9 #d2c6ae #d2c6ae #f3ead9;cursor:default;box-shadow:0 0 0 100vmax var(--wall),inset 0 0 18px #0005}
+body.spring .win::before,body.spring .win::after,body.spring .gl,body.spring #fog,body.spring #dr,body.spring .flash{display:none}
+body.spring #bg{filter:none;transform:none}
+body.spring .vig{opacity:.3}body.spring .title{color:#8a7560}body.spring .hint{color:#8a7560}
+body.spring .sill{background:linear-gradient(#eadfc8,#b9a684)}
+body.spring .desk{background:linear-gradient(#e2d1b0 0,#b99a6b 6px,#8a6a42 40px,#5b432a)}
+.rod{position:absolute;left:50%;top:6.6vh;width:calc(min(92vw,900px) + 70px);height:7px;transform:translateX(-50%);background:linear-gradient(#b08a5a,#6b4f30);border-radius:4px;z-index:2;box-shadow:0 3px 6px #0005}
+.cur{position:absolute;top:7.4vh;height:57.6vh;width:min(22vw,170px);z-index:2;transform-origin:50% 0;animation:cs 7s ease-in-out infinite alternate;background:repeating-linear-gradient(90deg,#f8e3df 0 12px,#e8bdb7 12px 20px,#f8e3df 20px 34px)}
+.cl{left:calc(50% - min(46vw,450px) - 12px);clip-path:polygon(0 0,100% 0,90% 38%,66% 56%,92% 100%,0 100%)}
+.cr{left:calc(50% + min(46vw,450px) - min(22vw,170px) + 12px);clip-path:polygon(0 0,100% 0,100% 100%,8% 100%,34% 56%,10% 38%)}
+@keyframes cs{from{transform:skewX(-.8deg)}to{transform:skewX(1.4deg)}}
+.fairy{position:absolute;left:50%;top:calc(9vh - 6px);width:min(92vw,900px);height:46px;transform:translateX(-50%);z-index:4;cursor:pointer}
+.fairy svg{width:100%;height:100%;overflow:visible}.bu{fill-opacity:.3}
+.fairy.on .bu{fill-opacity:1;filter:drop-shadow(0 0 5px #ffd27a);animation:tw 2.2s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.55}to{opacity:1}}
+.mlamp svg,.lantern svg{filter:brightness(.78)}
+.mlamp.on svg{filter:drop-shadow(0 0 14px #ffc2dc) brightness(1.1)}.lantern.on svg{filter:drop-shadow(0 0 16px #ffb255) brightness(1.1)}
+.pup svg{overflow:visible}
+.pup .tl{transform-box:view-box;transform-origin:150px 78px;animation:tl 1.8s ease-in-out infinite}.pup.happy .tl{animation-duration:.25s}
+.pup .pbody{transform-box:view-box;transform-origin:100px 90px;animation:br 4s ease-in-out infinite}
+.pup .phead{transform-box:fill-box;transform-origin:50% 90%;transition:transform .5s}
+.pup.sit .pbody{transform:rotate(-16deg);animation:none}.pup.sit .phead{transform:translate(0,-16px) rotate(4deg)}
+.pup.tilt .phead{transform:rotate(-16deg)}
+.pup .paw{transform-box:fill-box;transform-origin:100% 50%}.pup.shake .paw{animation:pw .5s ease-in-out 3}
+@keyframes pw{50%{transform:translate(8px,-16px) rotate(-30deg)}}
+.pup.roll svg{animation:rl 1.3s ease-in-out;transform-origin:50% 70%}@keyframes rl{to{transform:rotate(360deg)}}
+.pup .tg{opacity:0}.pup.happy .tg{opacity:1}
+.trn{position:fixed;z-index:12;display:none;padding:10px 12px;background:#fffaf0;color:#3a2c1c;border-radius:12px;box-shadow:0 10px 30px #0006;font:italic 18px 'Cormorant Garamond',serif;min-width:210px;transform:translateX(-50%)}
+.trn.open{display:block}
+.trn button{display:flex;justify-content:space-between;width:100%;margin-top:6px;padding:6px 10px;border:0;border-radius:8px;background:#f0dfc0;font:inherit;cursor:pointer;color:inherit}
+.trn button:hover{background:#ecd1a0}
+.themes{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.intro .tc{width:210px;margin:0;padding:16px 14px;border:1px solid #ffb25755;background:#ffffff08;color:#f0e4d2;border-radius:14px;font:italic 17px 'Cormorant Garamond',serif}
+.intro .tc b{display:block;font-size:30px;font-weight:500;margin-bottom:4px}.intro .tc span{opacity:.7}
+.intro .tc:hover{background:#ffb2571f}.intro .tc[data-t=spring]{border-color:#ffb3c777}.intro .tc[data-t=spring]:hover{background:#ffb3c722}
+@media(max-width:640px){.shelf.s2{--u:80px}}
 :focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 @media(max-width:640px){.hud{font-size:11px}.hud input[type=range]{width:70px}}
 @media(prefers-reduced-motion:reduce){.o,.cat .body,.plant .lf{animation:none;transition:none}}
@@ -108,6 +147,7 @@ body.lamp .glow{opacity:1}
   <canvas id="bg"></canvas><canvas id="rs"></canvas><canvas id="fog"></canvas><canvas id="dr"></canvas>
   <div class="gl"></div><div class="flash"></div>
 </div>
+<div class="rod sp"></div><div class="cur cl sp"></div><div class="cur cr sp"></div><div class="fairy sp" title="string lights"></div>
 <div class="sill"></div>
 <div class="shelf">
   <div class="o lamp" data-l="lamp" style="--k:1" tabindex="0"><svg viewBox="0 0 80 130"><defs><linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#d9964a"/><stop offset=".5" stop-color="#ffd694"/><stop offset="1" stop-color="#b9782f"/></linearGradient></defs><ellipse cx="40" cy="124" rx="24" ry="5" fill="#2a1d12"/><rect x="37" y="60" width="6" height="62" fill="#6b5231"/><path class="shade" d="M16 62 L28 12 H52 L64 62Z" fill="url(#sh)"/></svg></div>
@@ -116,6 +156,8 @@ body.lamp .glow{opacity:1}
   <div class="o phone" data-l="phone" style="--k:.8"><svg viewBox="0 0 64 112"><defs><linearGradient id="ps" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f2f55"/><stop offset="1" stop-color="#0b1020"/></linearGradient></defs><rect x="4" y="4" width="56" height="104" rx="9" fill="#15171c" stroke="#3a3f4a" stroke-width="2"/><rect x="8" y="8" width="48" height="96" rx="6" fill="url(#ps)"/><text id="ph-t" x="32" y="46" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-style="italic" font-size="19" fill="#fff">12:00</text><text id="ph-d" x="32" y="58" text-anchor="middle" font-size="5.5" fill="#cfd6e4" font-family="system-ui">Fri, 23 Oct</text><text id="ph-w" x="32" y="92" text-anchor="middle" font-size="5.5" fill="#9fb4e8" font-family="system-ui">rain</text><rect x="22" y="99" width="20" height="1.5" rx=".7" fill="#fff8"/></svg></div>
   <div class="o kettle" data-l="kettle" style="--k:.65" tabindex="0"><svg viewBox="0 0 110 90"><g class="steam" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M96 24q-6-8 0-14"/><path d="M102 26q-6-8 0-14"/><path d="M90 26q-6-8 0-14"/></g><path d="M20 84 Q14 50 34 40 H66 Q86 50 80 84Z" fill="#9aa0a8"/><path d="M26 82 Q22 56 36 46 H44 Q34 60 38 84Z" fill="#fff" opacity=".25"/><path d="M78 56 Q92 50 98 30 L102 32 Q96 58 80 66Z" fill="#7d838b"/><path d="M26 52 Q4 40 24 24 Q26 34 36 42" fill="none" stroke="#2b2218" stroke-width="6" stroke-linecap="round"/><ellipse cx="50" cy="38" rx="18" ry="5" fill="#80868e"/><circle cx="50" cy="31" r="5" fill="#2b2218"/><ellipse cx="50" cy="86" rx="32" ry="3" fill="#0006"/></svg></div>
   <div class="o cat" data-l="cat: pet me" style="--k:.62" tabindex="0"><svg viewBox="0 0 170 90"><defs><radialGradient id="fur" cx=".4" cy=".3" r=".85"><stop offset="0" stop-color="#7a7a82"/><stop offset="1" stop-color="#25252a"/></radialGradient></defs><g class="body"><path class="tail" d="M150 82 C178 72 168 42 140 52" fill="none" stroke="#2c2c31" stroke-width="12" stroke-linecap="round"/><ellipse cx="92" cy="58" rx="68" ry="30" fill="url(#fur)"/><path d="M60 34c8 12 6 30 2 46M84 29c8 12 8 34 4 52M108 30c8 12 8 32 4 50M130 38c6 10 6 26 2 38" stroke="#111" stroke-width="5" opacity=".3" fill="none" stroke-linecap="round"/></g><ellipse cx="38" cy="65" rx="25" ry="21" fill="url(#fur)"/><g class="ears"><path d="M18 53 L16 28 L34 44Z M58 51 L62 27 L44 42Z" fill="#2e2e34"/><path d="M21 49 L20 34 L30 44Z M55 48 L58 35 L47 43Z" fill="#b98a8a" opacity=".6"/></g><path class="ec" d="M26 65q5 4 10 0M44 65q5 4 10 0" stroke="#0b0b0d" stroke-width="2" fill="none" stroke-linecap="round"/><g class="eo"><ellipse cx="31" cy="64" rx="4.5" ry="5" fill="#c9d65a"/><ellipse cx="49" cy="64" rx="4.5" ry="5" fill="#c9d65a"/><ellipse cx="31" cy="64" rx="1.3" ry="4.5" fill="#111"/><ellipse cx="49" cy="64" rx="1.3" ry="4.5" fill="#111"/></g><path class="col" d="M16 74Q38 90 60 74" stroke="#c0392b" stroke-width="4" fill="none"/><circle class="col" cx="38" cy="84" r="3" fill="#e8c14a"/><path d="M38 71l-3-2h6z" fill="#c78b8b"/></svg></div>
+  <div class="o mlamp sp" data-l="mushroom lamp" style="--k:.5" tabindex="0"><svg viewBox="0 0 60 70"><rect x="24" y="36" width="12" height="30" rx="5" fill="#f1e6d2"/><ellipse cx="30" cy="67" rx="16" ry="3" fill="#0004"/><path d="M4 40Q4 8 30 8T56 40Q30 46 4 40Z" fill="#f29bb7"/><circle cx="18" cy="26" r="4" fill="#fff" opacity=".85"/><circle cx="34" cy="18" r="3" fill="#fff" opacity=".85"/><circle cx="44" cy="32" r="4.5" fill="#fff" opacity=".85"/></svg></div>
+  <div class="o lantern sp" data-l="paper lantern" style="--k:.62" tabindex="0"><svg viewBox="0 0 50 80"><rect x="15" y="10" width="20" height="5" rx="2" fill="#6b4f30"/><ellipse cx="25" cy="40" rx="20" ry="25" fill="#ffd9a0"/><path d="M25 15v50M12 20q-6 20 0 40M38 20q6 20 0 40" stroke="#e0a24c" stroke-width="1.2" fill="none"/><rect x="15" y="65" width="20" height="5" rx="2" fill="#6b4f30"/><ellipse cx="25" cy="76" rx="14" ry="3" fill="#0004"/></svg></div>
   <div class="o book" data-l="journal" style="--k:.36" tabindex="0"><svg viewBox="0 0 110 50"><rect x="4" y="22" width="102" height="24" rx="3" fill="#5b2a25"/><path d="M10 20 L100 20 L104 34 L8 34Z" fill="#efe6d2"/><path d="M16 25h76M15 29h78" stroke="#b9ad92" stroke-width="1"/><path d="M80 20v22" stroke="#a33" stroke-width="3"/><path d="M20 12 L96 6" stroke="#c9a24a" stroke-width="3" stroke-linecap="round"/></svg></div>
   <div class="o plant" data-l="plant" style="--k:.95" tabindex="0"><svg viewBox="0 0 70 110"><defs><linearGradient id="lf" x1="0" x2="1"><stop offset="0" stop-color="#3f7a3a"/><stop offset="1" stop-color="#1f4a22"/></linearGradient></defs><g class="lf"><ellipse cx="35" cy="42" rx="9" ry="30" fill="url(#lf)"/><ellipse cx="20" cy="54" rx="8" ry="24" transform="rotate(-35 20 54)" fill="url(#lf)"/><ellipse cx="50" cy="54" rx="8" ry="24" transform="rotate(35 50 54)" fill="url(#lf)"/><circle class="fl" cx="35" cy="12" r="6" fill="#f27ca0"/><circle class="fl" cx="35" cy="12" r="2" fill="#ffe08a"/></g><path d="M18 80h34l-5 28H23z" fill="#a4573a"/><rect x="15" y="76" width="40" height="8" rx="2" fill="#b8654a"/></svg></div>
 </div>
@@ -124,17 +166,19 @@ body.lamp .glow{opacity:1}
   <div class="o coffee" data-l="make coffee" style="--k:1" tabindex="0"><svg viewBox="0 0 100 130"><g class="steam" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M44 22q-6-8 0-14"/><path d="M52 22q-6-8 0-14"/><path d="M60 22q-6-8 0-14"/></g><rect x="14" y="26" width="72" height="26" rx="6" fill="#2b2f36"/><rect x="14" y="50" width="16" height="70" fill="#23262c"/><rect x="10" y="118" width="80" height="10" rx="3" fill="#1b1d22"/><rect x="52" y="52" width="8" height="8" fill="#181a1e"/><circle class="ld" cx="76" cy="38" r="3"/><rect x="36" y="82" width="44" height="36" rx="7" fill="#ffffff22" stroke="#cfd6dc" stroke-width="1.5"/><rect class="cof" x="38" y="84" width="40" height="32" rx="5" fill="#3b2110"/><path d="M80 90q10 0 10 12t-10 12" fill="none" stroke="#222" stroke-width="4"/></svg></div>
   <div class="o mug" data-l="coffee mug: sip" style="--k:.42" data-s="0" tabindex="0"><svg viewBox="0 0 60 56"><g class="steam" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M20 12q-5-6 0-11"/><path d="M28 12q-5-6 0-11"/><path d="M36 12q-5-6 0-11"/></g><path d="M8 18h36v22q0 10-10 10H18Q8 50 8 40z" fill="#e8e2d6"/><path d="M44 24h6q6 0 6 8t-6 8h-6" fill="none" stroke="#e8e2d6" stroke-width="5"/><ellipse class="cf" cx="26" cy="19" rx="17" ry="3.5" fill="#4a2a14"/></svg></div>
   <div class="o can" data-l="water the plant" style="--k:.62" tabindex="0"><svg viewBox="0 0 120 80"><path d="M24 28Q40 6 58 28" fill="none" stroke="#587a64" stroke-width="5"/><path d="M16 28H66L70 70Q70 74 66 74H18Q14 74 14 70Z" fill="#6f8f7a"/><path d="M66 60L108 22" stroke="#587a64" stroke-width="7" stroke-linecap="round"/><ellipse cx="110" cy="20" rx="6" ry="9" transform="rotate(40 110 20)" fill="#6f8f7a"/><path class="strm" d="M112 30Q118 52 112 78" stroke="#9cd0ff" stroke-width="3" fill="none" stroke-dasharray="3 4"/></svg></div>
+  <div class="o pup sp" data-l="Biscuit: tap to train" style="--k:.85" tabindex="0"><svg viewBox="0 0 170 100"><defs><radialGradient id="pf" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#f4cf8e"/><stop offset="1" stop-color="#d79a4e"/></radialGradient></defs><ellipse cx="88" cy="95" rx="72" ry="5" fill="#000" opacity=".25"/><path class="tl" d="M150 78C168 70 170 52 160 46" fill="none" stroke="#d79a4e" stroke-width="10" stroke-linecap="round"/><g class="pbody"><ellipse cx="98" cy="70" rx="56" ry="26" fill="url(#pf)"/><ellipse cx="136" cy="76" rx="20" ry="18" fill="#dca25a"/><ellipse cx="62" cy="88" rx="18" ry="7" fill="#f6d9a4"/><g class="paw"><ellipse cx="42" cy="89" rx="15" ry="7" fill="#f6d9a4"/></g></g><g class="phead"><ellipse cx="34" cy="64" rx="25" ry="22" fill="url(#pf)"/><ellipse cx="14" cy="60" rx="9" ry="16" transform="rotate(12 14 60)" fill="#b9803a"/><ellipse cx="54" cy="58" rx="9" ry="16" transform="rotate(-12 54 58)" fill="#b9803a"/><ellipse cx="34" cy="72" rx="14" ry="10" fill="#f6d9a4"/><ellipse cx="34" cy="67" rx="4.5" ry="3.2" fill="#2a1a12"/><circle cx="25" cy="58" r="3" fill="#2a1a12"/><circle cx="43" cy="58" r="3" fill="#2a1a12"/><circle cx="26" cy="57" r=".9" fill="#fff"/><circle cx="44" cy="57" r=".9" fill="#fff"/><path class="tg" d="M30 76q4 8 8 0" fill="#e86a7a"/><path d="M16 78Q34 92 54 78" stroke="#4aa3d8" stroke-width="4" fill="none"/><circle cx="34" cy="87" r="3" fill="#f2c94c"/></g></svg></div>
   <div class="o candle" data-l="candle" style="--k:.5" tabindex="0"><svg viewBox="0 0 30 70"><rect x="6" y="28" width="18" height="40" rx="2" fill="#eadfc6"/><path d="M6 28q9 6 18 0" fill="#d6c8a8"/><path d="M15 28v-4" stroke="#333" stroke-width="1.5"/><ellipse class="flame" cx="15" cy="16" rx="4" ry="8" fill="#ffc25a"/><ellipse class="flame" cx="15" cy="18" rx="2" ry="4.5" fill="#fff3c0"/></svg></div>
 </div>
-<div class="hint">wipe the fog · stroke the cat slowly · click everything</div>
+<div class="hint"><span class="rn">wipe the fog · stroke the cat slowly · click everything</span><span class="sp2">train the puppy · light the lamps · click everything</span></div>
 <div class="glow"></div><div class="vig"></div>
 <div class="hud"><b id="clk">--:--</b>
   <label>rain <input id="rn" type="range" min="0" max="1" step=".01" value=".6"></label>
   <label>time <input id="tm" type="range" min="0" max="24" step=".25" value="12"></label>
-  <div class="wx"><button data-w="rain">rain</button><button data-w="storm">storm</button><button data-w="clear">clear</button><button data-w="cold">cold</button></div><button id="lv">back to live time</button></div>
+  <div class="wx"><button data-w="rain">rain</button><button data-w="storm">storm</button><button data-w="clear">clear</button><button data-w="cold">cold</button></div><button id="th">switch theme</button><button id="lv">back to live time</button></div>
 <div class="jr" id="jr"><div><p>Write something. The rain will take it.</p><textarea id="txt" maxlength="140" placeholder="…"></textarea><button id="go">Let it go</button></div></div>
+<div class="trn" id="trn"><b>Biscuit</b> <small style="opacity:.6">train with treats</small><button data-k="sit">Sit <i></i></button><button data-k="shake">Shake paw <i></i></button><button data-k="roll">Roll over <i></i></button></div>
 <div class="jr" id="rp"><div><p>Radio. Quiet music under the rain.</p><input id="rq" type="text" placeholder="search any song or artist"> <button id="rg">Search</button><div id="rl"></div><label>volume <input id="rv" type="range" min="0" max="1" step=".01" value=".4"></label><p id="np" style="font-size:16px;margin:0 0 8px"></p><button id="lo">Generated lofi on/off</button> <button id="sp">Stop music</button><p style="font-size:14px;opacity:.6;margin-top:10px">Plays 30-second previews on loop, kept low. Needs internet.</p><audio id="au" loop></audio></div></div>
-<div class="intro" id="intro"><h1>Petrichor</h1><p>the smell of rain on dry earth</p><button id="enter">Step inside</button><p style="font-size:16px">headphones recommended</p></div>
+<div class="intro" id="intro"><h1>Petrichor</h1><p>the smell of rain on dry earth</p><div class="themes"><button class="tc" data-t="rain"><b>Rain</b><span>foggy window, a shy cat, lofi</span></button><button class="tc" data-t="spring"><b>Spring</b><span>open window, a puppy, falling petals</span></button></div><p style="font-size:16px">choose a room · headphones recommended</p></div>
 
 <script>
 (()=>{
@@ -161,7 +205,8 @@ function size(){
   const lr=$('.lamp').getBoundingClientRect();
   root.style.setProperty('--lx',lr.left+lr.width/2+'px');root.style.setProperty('--ly',lr.top+30+'px');
 }
-function paint(){
+function paint(){const d=dayF(now());if(wx=='spring')springScene(d,glowF(now()));else paintCity()}
+function paintCity(){
   const t=now(),d=dayF(t),g=glowF(t);
   const P={rain:[[5,9,19],[112,128,143],[20,28,46],[168,178,187]],storm:[[4,6,14],[66,76,92],[16,20,32],[108,118,133]],clear:[[3,7,22],[58,128,205],[14,26,58],[190,225,245]],cold:[[10,16,30],[150,170,188],[40,52,72],[225,232,240]]}[wx];
   const top=mix(P[0],P[1],d),bot=mix(P[2],P[3],d);
@@ -198,9 +243,30 @@ function paint(){
   fbx.fillStyle=`rgba(200,214,228,${.18+.12*d+(wx=='cold'?.2:0)})`;fbx.fillRect(0,0,W,H);
   room();
 }
+function springScene(d,g){
+  const top=mix([8,14,40],[110,180,235],d),bot=mix([30,40,80],[220,240,250],d);
+  bx.globalCompositeOperation='source-over';
+  const gr=bx.createLinearGradient(0,0,0,H);gr.addColorStop(0,`rgb(${top})`);gr.addColorStop(1,`rgb(${bot})`);bx.fillStyle=gr;bx.fillRect(0,0,W,H);
+  for(let i=0;i<70;i++){bx.fillStyle=`rgba(255,255,255,${(1-d)*.8*hsh(i,2)})`;bx.fillRect(hsh(i,1)*W,hsh(i,4)*H*.5,1.5,1.5)}
+  let q=bx.createRadialGradient(W*.7,H*.25,0,W*.7,H*.25,120);q.addColorStop(0,`rgba(255,244,210,${d})`);q.addColorStop(.25,`rgba(255,226,160,${d*.5})`);q.addColorStop(1,'rgba(255,226,160,0)');bx.fillStyle=q;bx.fillRect(W*.7-120,H*.25-120,240,240);
+  if(g>.02){q=bx.createRadialGradient(W/2,H*.7,0,W/2,H*.7,W*.7);q.addColorStop(0,`rgba(255,150,110,${Math.min(.6,g*.6)})`);q.addColorStop(1,'rgba(255,150,110,0)');bx.fillStyle=q;bx.fillRect(0,0,W,H)}
+  for(let i=0;i<6;i++){const cx=hsh(i,3)*W,cy=H*(.08+hsh(i,5)*.28),r=W*(.1+hsh(i,7)*.1);q=bx.createRadialGradient(cx,cy,0,cx,cy,r);q.addColorStop(0,`rgba(255,255,255,${.12+.5*d})`);q.addColorStop(1,'rgba(255,255,255,0)');bx.fillStyle=q;bx.fillRect(cx-r,cy-r,r*2,r*2)}
+  [[150,205,150],[110,180,110],[70,150,85]].forEach((hc,k)=>{const y0=H*(.55+k*.1);bx.fillStyle=`rgb(${mix([14,28,40],hc,d)})`;bx.beginPath();bx.moveTo(0,H);for(let x=0;x<=W;x+=8)bx.lineTo(x,y0+Math.sin(x/W*5+k*2)*H*.03+Math.sin(x/W*11+k)*H*.012);bx.lineTo(W,H);bx.fill()});
+  const tree=(x,sc)=>{
+    bx.fillStyle=`rgb(${mix([20,14,12],[100,70,48],d)})`;bx.beginPath();bx.moveTo(x-9*sc,H);bx.lineTo(x-4*sc,H*.45);bx.lineTo(x+4*sc,H*.45);bx.lineTo(x+9*sc,H);bx.fill();
+    for(let i=0;i<16;i++){const bxp=x+(hsh(i,x)-.5)*150*sc,byp=H*(.2+hsh(i,x+1)*.22),r=(26+hsh(i,x+2)*26)*sc,c=i%4==3?'120,195,105':i%2?'255,196,214':'250,168,196';
+      const o=bx.createRadialGradient(bxp,byp,0,bxp,byp,r);o.addColorStop(0,`rgba(${c},.95)`);o.addColorStop(1,`rgba(${c},0)`);bx.fillStyle=o;bx.fillRect(bxp-r,byp-r,r*2,r*2)}
+  };
+  tree(W*.1,1.1);tree(W*.9,1.3);
+  const gg=bx.createLinearGradient(0,H*.86,0,H);gg.addColorStop(0,`rgb(${mix([10,26,22],[90,170,80],d)})`);gg.addColorStop(1,`rgb(${mix([6,16,14],[60,130,60],d)})`);bx.fillStyle=gg;bx.fillRect(0,H*.86,W,H*.14);
+  for(let i=0;i<46;i++){bx.fillStyle=['#fff','#ffd1e0','#ffe58a','#d9b8ff'][i%4];bx.globalAlpha=.4+.6*d;bx.beginPath();bx.arc(hsh(i,11)*W,H*(.88+hsh(i,12)*.11),2+hsh(i,13)*2,0,7);bx.fill()}bx.globalAlpha=1;
+  bx.fillStyle=`rgba(6,10,30,${(1-d)*.55})`;bx.fillRect(0,0,W,H);
+  q=bx.createRadialGradient(W*.25,H*.2,0,W*.25,H*.2,42);q.addColorStop(0,`rgba(240,244,255,${(1-d)})`);q.addColorStop(.4,`rgba(220,230,255,${(1-d)*.6})`);q.addColorStop(1,'rgba(220,230,255,0)');bx.fillStyle=q;bx.fillRect(W*.25-42,H*.2-42,84,84);
+  room();
+}
 function room(){
   const d=dayF(now());
-  root.style.setProperty('--wall',`rgb(${mix([10,8,7],[60,54,48],d*.85)})`);
+  root.style.setProperty('--wall',`rgb(${document.body.classList.contains('spring')?mix([38,30,36],[238,220,198],d):mix([10,8,7],[60,54,48],d*.85)})`);
   document.body.classList.toggle('lamp',lampOn);
 }
 
@@ -219,6 +285,14 @@ function draw(d){
   dx.fillStyle='rgba(255,255,255,.22)';dx.beginPath();dx.ellipse(d.x+r*.1,d.y+r*.55*sy,r*.45,r*.16,0,0,7);dx.fill();
 }
 const sk=[...Array(160)].map(()=>({x:Math.random(),y:Math.random(),l:.4+Math.random()*.9,s:.5+Math.random()}));
+const pt=[...Array(60)].map((_,i)=>({x:Math.random(),y:Math.random(),s:.5+Math.random(),r:Math.random()*6,v:(Math.random()-.5)*.04,k:i%3,z:3+Math.random()*3.5}));
+function petals(dt){
+  const d=dayF(now());rx.globalAlpha=.45+.55*d;
+  pt.forEach((p,i)=>{p.y+=p.s*.0032*dt;p.x+=(Math.sin(fr/55+i)*.0011+.0007)*dt;p.r+=p.v*dt;if(p.y>1.03){p.y=-.03;p.x=Math.random()}if(p.x>1.03)p.x=-.03;
+    rx.save();rx.translate(p.x*W,p.y*H);rx.rotate(p.r);rx.fillStyle=['rgba(255,190,210,.95)','rgba(130,190,95,.95)','rgba(225,185,70,.92)'][p.k];rx.beginPath();rx.ellipse(0,0,p.z,p.z*(p.k?.55:.7),0,0,7);rx.fill();rx.restore()});
+  rx.globalAlpha=1;
+  if(d<.45)for(let i=0;i<14;i++){const x=(hsh(i,6)+Math.sin(fr/200+i)*.04)*W,y=H*(.5+hsh(i,8)*.4)+Math.cos(fr/160+i*2)*10,a=(.5+.5*Math.sin(fr/25+i*3))*(1-d),q=rx.createRadialGradient(x,y,0,x,y,9);q.addColorStop(0,`rgba(255,240,150,${a})`);q.addColorStop(1,'rgba(255,240,150,0)');rx.fillStyle=q;rx.fillRect(x-9,y-9,18,18)}
+}
 function applyFog(){fx.clearRect(0,0,W,H);const a={rain:.9,storm:.9,clear:0,cold:1}[wx];if(a){fx.globalAlpha=a;fx.drawImage(fb,0,0,W,H);fx.globalAlpha=1}}
 function streaks(dt){
   rx.clearRect(0,0,W,H);
@@ -229,7 +303,7 @@ function streaks(dt){
     for(let i=0;i<n;i++){const p=sk[i];p.y+=p.s*.035*dt*(wx=='storm'?1.5:1);p.x-=p.s*.006*dt;if(p.y>1.05){p.y=-.1;p.x=Math.random()*1.2}if(p.x<-.05)p.x+=1.1;
       const x=p.x*W,y=p.y*H,L=14*p.l*(1+p.s);rx.moveTo(x,y);rx.lineTo(x-L*.18,y+L)}
     rx.stroke();
-  }else if(snow){
+  }else if(wx=='spring'){petals(dt)}else if(snow){
     rx.fillStyle='rgba(255,255,255,.85)';
     for(let i=0;i<90;i++){const p=sk[i];p.y+=p.s*.004*dt;p.x+=Math.sin((fr+i*30)/70)*.0006;if(p.y>1.02){p.y=-.02;p.x=Math.random()}rx.beginPath();rx.arc(p.x*W,p.y*H,1+p.l*1.6,0,7);rx.fill()}
   }
@@ -240,7 +314,7 @@ function frame(ts){
   requestAnimationFrame(frame);
   const dt=Math.min(40,ts-last)/16.7;last=ts;fr++;streaks(dt);
   if(wx=='rain'||wx=='storm'){acc+=Math.max(inten,wx=='storm'?.85:0)**2*1.4*dt;while(acc>1){acc--;drops.push(newDrop());if(drops.length>240)drops.shift()}}
-  if(fr%3==0){fx.globalAlpha={rain:.012,storm:.012,clear:.003,cold:.02}[wx];fx.drawImage(fb,0,0,W,H);fx.globalAlpha=1}
+  if(fr%3==0){fx.globalAlpha={rain:.012,storm:.012,clear:.003,cold:.02,spring:0}[wx];fx.drawImage(fb,0,0,W,H);fx.globalAlpha=1}
   dx.clearRect(0,0,W,H);
   for(let i=drops.length-1;i>=0;i--){
     const d=drops[i];
@@ -277,7 +351,7 @@ function start(){
   const wn=src(nbuf('b',6)),wb=filt('bandpass',420,2.5),lf=AC.createOscillator(),lg2=AC.createGain();windG=AC.createGain();lf.frequency.value=.09;lg2.gain.value=220;lf.connect(lg2);lg2.connect(wb.frequency);lf.start();wn.connect(wb);wb.connect(windG);windG.connect(M);
   setRain();setInterval(drip,110);
 }
-function setRain(){if(!AC)return;const w=wx=='rain'||wx=='storm',k=wx=='storm'?Math.max(inten,.85):inten,t=AC.currentTime;rainG.gain.setTargetAtTime(w?k*.14:0,t,.4);rumG.gain.setTargetAtTime(w?k*.4:0,t,.4);windG.gain.setTargetAtTime({rain:.04,storm:.3,clear:.12,cold:.9}[wx],t,.8)}
+function setRain(){if(!AC)return;const w=wx=='rain'||wx=='storm',k=wx=='storm'?Math.max(inten,.85):inten,t=AC.currentTime;rainG.gain.setTargetAtTime(w?k*.14:0,t,.4);rumG.gain.setTargetAtTime(w?k*.4:0,t,.4);windG.gain.setTargetAtTime({rain:.04,storm:.3,clear:.12,cold:.9,spring:.1}[wx],t,.8)}
 function drip(){if((wx=='rain'||wx=='storm')&&Math.random()<inten*.35){const o=AC.createOscillator(),g=AC.createGain(),t=AC.currentTime;o.frequency.value=1800+Math.random()*3200;g.gain.setValueAtTime(.015+Math.random()*.02,t);g.gain.exponentialRampToValueAtTime(.0001,t+.04);o.connect(g);g.connect(rainF);o.start(t);o.stop(t+.05)}}
 function nz(t,f,type,v,d,out){const s=AC.createBufferSource(),fl=filt(type,f,1.2),g=AC.createGain();s.buffer=NB;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);s.connect(fl);fl.connect(g);g.connect(out||M);s.start(t,Math.random()*2);s.stop(t+d+.02)}
 function thunder(delay){
@@ -293,11 +367,13 @@ function bolt(){
 }
 setInterval(()=>{if(wx=='storm'&&Math.random()<.5)bolt()},3500);
 function chirp(){
-  if(!AC||wx!='clear'||dayF(now())<.35||Math.random()<.5)return;
+  if(!AC||(wx!='clear'&&wx!='spring')||dayF(now())<.35||Math.random()<.5)return;
   const t=AC.currentTime,n=2+Math.random()*3|0,f0=2600+Math.random()*1800;
   for(let i=0;i<n;i++){const o=AC.createOscillator(),g=AC.createGain(),q=t+i*.13;o.frequency.setValueAtTime(f0,q);o.frequency.exponentialRampToValueAtTime(f0*1.5,q+.09);g.gain.setValueAtTime(0,q);g.gain.linearRampToValueAtTime(.025,q+.02);g.gain.exponentialRampToValueAtTime(.0001,q+.1);o.connect(g);g.connect(M);o.start(q);o.stop(q+.12)}
 }
 setInterval(chirp,1600);
+function cricket(){if(!AC||wx!='spring'||dayF(now())>.3)return;const t=AC.currentTime;for(let i=0;i<4;i++){const o=AC.createOscillator(),g=AC.createGain(),q=t+i*.09;o.frequency.value=4300;g.gain.setValueAtTime(0,q);g.gain.linearRampToValueAtTime(.012,q+.015);g.gain.linearRampToValueAtTime(0,q+.05);o.connect(g);g.connect(M);o.start(q);o.stop(q+.06)}}
+setInterval(cricket,700);
 
 const CH=[[50,57,60,65],[55,59,62,65],[48,55,59,64],[57,60,64,67]],PENT=[69,72,74,76,79,81],B=60/72;
 function tone(m,t,d,v,ty){const o=AC.createOscillator(),g=AC.createGain();o.type=ty||'triangle';o.frequency.value=440*2**((m-69)/12);o.detune.value=(Math.random()-.5)*14;
@@ -347,7 +423,7 @@ function setWx(w){
   drops=(w=='rain'||w=='storm')?(drops.length?drops:[...Array(90)].map(newDrop)):[];
   document.querySelectorAll('.wx button').forEach(b=>b.classList.toggle('a',b.dataset.w==w));
   paint();applyFog();setRain();
-  $('#ph-w').textContent={rain:'rain · 22°',storm:'storm · 20°',clear:'clear · 28°',cold:'cold · 4°'}[w];
+  $('#ph-w').textContent={rain:'rain · 22°',storm:'storm · 20°',clear:'clear · 28°',cold:'cold · 4°',spring:'spring · 24°'}[w];
   if(w=='storm')setTimeout(bolt,700);
 }
 let trust=0,pl=0;try{trust=+localStorage.getItem('pt')||0;pl=+localStorage.getItem('pl')||0}catch(e){}
@@ -410,8 +486,38 @@ $('#rn').oninput=e=>{inten=+e.target.value;setRain()};
 $('#tm').oninput=e=>{live=false;T0=+e.target.value;lampOn=dayF(T0)<.55;$('.lamp').classList.toggle('on',lampOn);paint()};
 document.querySelectorAll('.wx button').forEach(b=>b.onclick=()=>setWx(b.dataset.w));
 $('#lv').onclick=()=>{live=true;lampOn=dayF(hr())<.55;$('.lamp').classList.toggle('on',lampOn);paint()};
-$('#enter').onclick=()=>{start();$('#intro').classList.add('hide')};
+document.querySelectorAll('.tc').forEach(b=>b.onclick=()=>{start();setTheme(b.dataset.t);$('#intro').classList.add('hide')});
 
+/* ---------- themes, spring items, puppy training ---------- */
+function setTheme(n){
+  const sp=n=='spring';document.body.classList.toggle('spring',sp);$('#trn').classList.remove('open');
+  setWx(sp?'spring':'rain');
+  if(sp)$('.fairy').classList.toggle('on',dayF(now())<.5);
+  const lr=$('.lamp').getBoundingClientRect();root.style.setProperty('--lx',lr.left+lr.width/2+'px');root.style.setProperty('--ly',lr.top+30+'px');
+}
+$('#th').onclick=()=>setTheme(document.body.classList.contains('spring')?'rain':'spring');
+(()=>{let w='',bl='';const yy=x=>6+30*Math.sin(Math.PI*(x%300)/300);
+  for(let x=0;x<=900;x+=10)w+=(x?'L':'M')+x+' '+yy(x).toFixed(1);
+  for(let i=0;i<25;i++){const x=18+i*35.5;bl+=`<circle class="bu" cx="${x}" cy="${(yy(x)+7).toFixed(1)}" r="4.5" style="animation-delay:${(i*.37%2).toFixed(2)}s;fill:${['#ffd27a','#ffb3c7','#fff0c2','#ffc78a'][i%4]}"/>`}
+  $('.fairy').innerHTML=`<svg viewBox="0 0 900 46" preserveAspectRatio="none"><path d="${w}" fill="none" stroke="#3a2a1a" stroke-width="1.5"/>${bl}</svg>`;})();
+$('.fairy').onclick=()=>$('.fairy').classList.toggle('on');
+on('.mlamp',()=>$('.mlamp').classList.toggle('on'));on('.lantern',()=>$('.lantern').classList.toggle('on'));
+let TR={sit:0,shake:0,roll:0},lastP=0,ph;try{TR=Object.assign(TR,JSON.parse(localStorage.getItem('ptr')||'{}'))}catch(e){}
+function trUpd(){document.querySelectorAll('#trn button').forEach(b=>{const v=TR[b.dataset.k],f=Math.floor(v);b.querySelector('i').textContent=v>=3?'★ learned':'●'.repeat(f)+'○'.repeat(3-f)});try{localStorage.setItem('ptr',JSON.stringify(TR))}catch(e){}}
+function pop(t){const h=document.createElement('i');h.className='hf';h.textContent=t;h.style.left=15+Math.random()*60+'%';$('.pup').appendChild(h);setTimeout(()=>h.remove(),1600)}
+function bark(ok){
+  if(!AC)return;const t=AC.currentTime;
+  (ok?[0,.22]:[0]).forEach(dl=>{const o=AC.createOscillator(),f=filt('lowpass',1100),g=AC.createGain();o.type='sawtooth';o.frequency.setValueAtTime(ok?420:620,t+dl);o.frequency.exponentialRampToValueAtTime(ok?220:380,t+dl+.14);g.gain.setValueAtTime(0,t+dl);g.gain.linearRampToValueAtTime(ok?.12:.05,t+dl+.02);g.gain.exponentialRampToValueAtTime(.001,t+dl+.18);o.connect(f);f.connect(g);g.connect(M);o.start(t+dl);o.stop(t+dl+.2)});
+}
+function trick(k){
+  const p=$('.pup');if(p.dataset.busy)return;p.dataset.busy=1;const lv=TR[k];
+  if(Math.random()<.2+lv*.3){p.classList.add(k,'happy');TR[k]=Math.min(5,lv+1);bark(1);pop('🦴');setTimeout(()=>pop('♥'),500)}
+  else{p.classList.add('tilt');TR[k]=Math.min(5,lv+.4);bark(0);pop('?')}
+  trUpd();setTimeout(()=>{p.classList.remove('tilt','happy',k);delete p.dataset.busy},2300);
+}
+document.querySelectorAll('#trn button').forEach(b=>b.onclick=()=>trick(b.dataset.k));trUpd();
+on('.pup',()=>{const t=$('#trn');t.classList.toggle('open');const r=$('.pup').getBoundingClientRect();t.style.left=r.left+r.width/2+'px';t.style.top=Math.max(8,r.top-t.offsetHeight-8)+'px'});
+$('.pup').addEventListener('pointermove',()=>{const n=performance.now();if(n-lastP<150)return;lastP=n;if(Math.random()<.4)pop('♥');const p=$('.pup');if(!p.dataset.busy){p.classList.add('happy');clearTimeout(ph);ph=setTimeout(()=>p.classList.remove('happy'),1200)}});
 function hands(){
   const t=now(),n=new Date(),sec=live?n.getSeconds():0;
   $('#hh').setAttribute('transform',`rotate(${(t%12)*30} 35 35)`);$('#mh').setAttribute('transform',`rotate(${(t%1)*360} 35 35)`);$('#sh2').setAttribute('transform',`rotate(${sec*6} 35 35)`);

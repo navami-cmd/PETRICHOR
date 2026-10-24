@@ -13,6 +13,13 @@ A cozy rainy room in your browser. Rain streaks down a foggy window over a night
 - **Sill and desk**: tilted phone with the real time, water the plant until it blooms, brew coffee, light the candle.
 - **Radio**: search any song and play a 30-second preview, kept low under the rain (iTunes Search API, no key needed).
 
+## Themes
+
+Pick a room when it opens (or use *switch theme* any time):
+
+- **Rain**: the foggy window room above.
+- **Spring**: open window with swaying curtains, blossom trees and falling petals, fireflies at night, string lights, a mushroom lamp and a paper lantern you can light, and Biscuit the puppy you can train (sit, shake, roll over). The sky, sun, moon and sounds follow your real local time.
+
 ## Run
 
 Open `index.html` in a browser (or use the VS Code Live Server extension).
