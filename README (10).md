@@ -18,7 +18,7 @@ A cozy rainy room in your browser. Rain streaks down a foggy window over a night
 Pick a room when it opens (or use *switch theme* any time):
 
 - **Rain**: the foggy window room above.
-- **Spring**: a painted sunset window (sheer curtains, trees, fireworks at dusk, real-time sky), a golden puppy in a rainbow sweater you can train, a tulip glass lamp, string lights, candles, a digital clock and an iPad to-do list you can tick off.
+- **Spring**: a coastal window with an animated ocean (rolling waves, foam, sun glitter, a sailboat, gulls), an open white casement, climbing vines with blossoms, shimmering sheer curtain, falling petals, a fluffy procedural-fur puppy you can train, a tulip glass lamp, string lights, candles, a digital clock and an iPad to-do list. The sky and sea follow your real time.
 
 ## Run
 
