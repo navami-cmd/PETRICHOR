@@ -32,8 +32,8 @@ a shy cat. a warm lamp. thunder somewhere far away.
 ### Spring
 *day · ocean · petals*
 
-open window, shimmering curtain, real rolling waves.
-a fluffy puppy who really wants a treat.
+an open french window, sheer curtains, a real shimmering sea.
+pink blossoms, a sleepy kitten.
 
 </td>
 </tr>
@@ -53,11 +53,12 @@ a fluffy puppy who really wants a treat.
 
 **🌊 Spring room**
 
-- 🌊 animated ocean: swells, breaking waves, foam, sun glitter
-- ⛵ a sailboat, gulls, drifting petals
-- 🌿 vines + blossoms swaying on an open white casement
-- 🐶 **Biscuit**: fur drawn stroke by stroke, eyes that follow your cursor
-- 🌷 tulip glass lamp, string lights, candles
+- 🪟 a real photographic window: sheer curtains, open sashes, a shimmering sea
+- 🌊 the water ripples and the sun glitter twinkles, and the sky follows your time
+- 🌸 bougainvillea blossoms sway at the corners, petals drift past
+- 🐱 **Mochi** the kitten
+- 💡 a pink tulip study lamp that really switches on and off
+- ⏰ white digital clock with your real time, to-do iPad
 
 **🛋️ Both rooms**
 
@@ -69,19 +70,6 @@ a fluffy puppy who really wants a treat.
 - 📻 radio: search any song, it plays quietly under the rain
 
 <img src="assets/rain-divider.svg" width="100%" alt="">
-
-## 🐶 &nbsp;Training Biscuit
-
-tap him → pick a trick.
-
-| trick | what he does |
-|:--|:--|
-| 🐾 **Paw** | shakes hands |
-| 🌀 **Spin** | does a little twirl |
-| 🔊 **Speak** | yip yip yip |
-| 🛏️ **Down** | flops low |
-
-he learns fast. two wins and it's **★ learned**.
 
 <img src="assets/rain-divider.svg" width="100%" alt="">
 
@@ -119,13 +107,20 @@ or use **Live Server** in VS Code. click *Step inside* to start the sound.
 ## 🧪 &nbsp;Under the hood
 
 ```text
-canvas 2D     fog, raindrops, ocean, waves, glitter, vines
+photos        spring window, pets, lamp, blossoms (in assets/photos)
+canvas 2D     fog, raindrops, rain-city skyline, water ripple, glitter
 Web Audio     rain, thunder, wind, birds, crickets, lofi, purr, yips
-procedural    puppy fur, knit sweater, city skyline, sky
+procedural    the rain-city skyline, sky, petals
 localStorage  cat trust, plant growth, puppy tricks, to-do list
 ```
 
 one `index.html`. that's the whole project.
+
+<img src="assets/rain-divider.svg" width="100%" alt="">
+
+## 📸 &nbsp;Photo credits
+
+the spring room uses reference photos stored in `assets/photos/`. if you publish this repo, swap in images you own or have the right to use.
 
 <img src="assets/rain-divider.svg" width="100%" alt="">
 
