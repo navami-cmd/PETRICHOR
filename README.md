@@ -51,13 +51,12 @@ pink blossoms, a sleepy kitten.
 - 🐈 a wary cat. stroke it slowly to earn its trust
 - 🎧 rain that muffles when your cursor leaves the window
 
-**🌊 Spring room**
+**🌊 Spring room** (three photo scenes, switch in the panel)
 
-- 🪟 a real photographic window: sheer curtains, open sashes, a shimmering sea
-- 🌊 the water ripples and the sun glitter twinkles, and the sky follows your time
-- 🌸 bougainvillea blossoms sway at the corners, petals drift past
-- 🐱 **Mochi** the kitten
-- 💡 a pink tulip study lamp that really switches on and off
+- 🪟 **window**: shimmering sea, swaying curtains, drifting light and petals
+- 💡 **lamp**: click to switch it on and off, warm flicker and floating dust
+- 🐱 **kitten**: blinks, follows your cursor, purrs when you stroke him, dozes off
+- 🌊 ocean waves, birds and soft lofi play quietly by default
 - ⏰ white digital clock with your real time, to-do iPad
 
 **🛋️ Both rooms**
