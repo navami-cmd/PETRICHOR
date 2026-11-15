@@ -51,13 +51,14 @@ pink blossoms, a sleepy kitten.
 - 🐈 a wary cat. stroke it slowly to earn its trust
 - 🎧 rain that muffles when your cursor leaves the window
 
-**🌊 Spring room** (three photo scenes, switch in the panel)
+**🌊 Spring room** (hand-painted in code, one consistent style)
 
-- 🪟 **window**: shimmering sea, swaying curtains, drifting light and petals
-- 💡 **lamp**: click to switch it on and off, warm flicker and floating dust
-- 🐱 **kitten**: blinks, follows your cursor, purrs when you stroke him, dozes off
-- 🌊 ocean waves, birds and soft lofi play quietly by default
+- 🌅 a sunny seaside window: moving waves, sparkles, a sailboat, gulls, blossom branches
+- 🪟 sheer curtains and a cream window sill
+- 💡 a pink tulip lamp that switches on and off
+- 🐱 **Mochi** the kitten: blinks, follows your cursor, purrs when you hover
 - ⏰ white digital clock with your real time, to-do iPad
+- 🌊 ocean waves, birds and soft lofi play quietly
 
 **🛋️ Both rooms**
 
@@ -87,6 +88,12 @@ pink blossoms, a sleepy kitten.
 
 <img src="assets/rain-divider.svg" width="100%" alt="">
 
+## 🎞️ &nbsp;Make the Spring view 100% real
+
+the default sea is a real-time ocean shader. for true photo realism, drop any HD beach-window clip at `assets/spring.mp4` and it becomes the view automatically. free stock sites like Pexels or Pixabay have loops (search *ocean window*, *balcony sea*, *beach curtains*).
+
+<img src="assets/rain-divider.svg" width="100%" alt="">
+
 ## 🚀 &nbsp;Run it
 
 no install. no build.
@@ -106,20 +113,13 @@ or use **Live Server** in VS Code. click *Step inside* to start the sound.
 ## 🧪 &nbsp;Under the hood
 
 ```text
-photos        spring window, pets, lamp, blossoms (in assets/photos)
-canvas 2D     fog, raindrops, rain-city skyline, water ripple, glitter
+canvas 2D     fog, raindrops, city skyline, the whole spring seascape
 Web Audio     rain, thunder, wind, birds, crickets, lofi, purr, yips
 procedural    the rain-city skyline, sky, petals
 localStorage  cat trust, plant growth, puppy tricks, to-do list
 ```
 
 one `index.html`. that's the whole project.
-
-<img src="assets/rain-divider.svg" width="100%" alt="">
-
-## 📸 &nbsp;Photo credits
-
-the spring room uses reference photos stored in `assets/photos/`. if you publish this repo, swap in images you own or have the right to use.
 
 <img src="assets/rain-divider.svg" width="100%" alt="">
 
